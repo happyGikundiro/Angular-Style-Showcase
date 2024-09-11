@@ -8,6 +8,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { MainContentComponent } from './components/main-content/main-content.component';
 import { ChildOneComponent } from './components/main-content/child-one/child-one.component';
 import { ChildTwoComponent } from './components/main-content/child-two/child-two.component';
+import { ThemeToggleDirective } from './theme/theme-toggle.directive';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,11 +18,13 @@ import { ChildTwoComponent } from './components/main-content/child-two/child-two
     FooterComponent,
     MainContentComponent,
     ChildOneComponent,
-    ChildTwoComponent
+    ChildTwoComponent,
+    ThemeToggleDirective,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

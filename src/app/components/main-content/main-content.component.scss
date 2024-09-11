@@ -1,0 +1,15 @@
+@import '../../../styles/mixins';
+
+.main-content {
+  @include flex-center;
+  flex-wrap: wrap;
+  padding: px-to-rem(16px);
+
+  .child {
+    flex: 1 1 45%;
+    margin: px-to-rem(16px);
+    padding: px-to-rem(16px);
+    border: 1px solid #ccc;
+    border-radius: px-to-rem(8px);
+  }
+}

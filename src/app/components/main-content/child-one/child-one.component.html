@@ -1,1 +1,19 @@
-<p>child-one works!</p>
+ 
+  <div class="products-container" *ngIf="products.length > 0; else loading">
+    <div *ngFor="let product of products" class="product-item">
+      <div class="image-container">
+        <img [src]="product.image" [alt]="product.title" class="product-image">
+      </div>
+  
+      <div class="product-info">
+        <p class="product-title">{{ product.title }}</p>
+        <h3 class="product-category">{{ product.category }}</h3>
+        <p class="product-price">${{ product.price.toFixed(2) }}</p>
+      </div>
+    </div>
+  </div>
+  
+  <ng-template #loading>
+    <p class="loading-message">Loading products...</p>
+  </ng-template>
+  

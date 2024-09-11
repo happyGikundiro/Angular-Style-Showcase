@@ -1,1 +1,19 @@
-<p>header works!</p>
+<header class="header">
+    <!-- <h1>HACHAFU</h1> -->
+    <div class='logo-container'>
+    <img src="/assets/Images/logo.png" alt="">
+    </div>
+
+    <div class='header-right'>
+    <div class='links'>
+    <a routerLink="home" routerLinkActive="active">Home</a>
+    <a routerLink="products" routerLinkActive="active">Products</a>
+    </div>
+
+    <button class="theme-toggle" (click)="toggleTheme()">
+      <i class="material-icons">{{ themeIcon }}</i>
+    </button>
+    </div>
+
+  </header>
+  

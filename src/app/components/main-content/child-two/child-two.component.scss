@@ -1,0 +1,118 @@
+
+@import '../../../../styles/mixins.scss';
+@import '../../../../styles/variables.scss';
+
+.child-two {
+  padding: px-to-rem($spacing-unit * 2);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: px-to-rem($spacing-unit);
+  padding: 40px 0;
+
+  .content {
+    padding-right: px-to-rem($spacing-unit);
+    padding: 50px 20px 20px 20px;
+    grid-column: span 2;
+
+    h2 {
+      font-size: px-to-rem(24px);
+      color: $text-color;
+    }
+
+    .description {
+      font-size: px-to-rem($font-size);
+      margin: $spacing-unit 0;
+      padding: 20px 0;
+    }
+
+    .button {
+      @include button-style($text-color);
+      border-radius: 30px;
+      padding: 14px 30px;
+      font-family: "Poppins", system-ui;
+    }
+  }
+
+  .image-container {
+    display: flex;
+    justify-content: end;
+    height: 450px;
+    grid-column: span 1;
+
+    .product-image {
+      width: 480px;
+      height: 100%;
+      border-top-left-radius: 60px;
+      border-bottom-right-radius: 60px;
+      object-fit: cover;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr 1fr;
+    
+    .image-container {
+      grid-column: span 2;
+      justify-content: center;
+      
+      .product-image {
+        width: 100%;
+      }
+    }
+
+    .content {
+      grid-column: span 2;
+
+      h2 {
+        font-size: px-to-rem(20px);
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    
+    .image-container {
+      grid-column: span 1;
+      justify-content: center;
+      
+      .product-image {
+        width: 100%;
+      }
+    }
+
+    .content {
+      grid-column: span 1;
+      
+      h2 {
+        font-size: px-to-rem(18px);
+      }
+
+      .description {
+        padding: 10px 0;
+      }
+
+      .button {
+        padding: 10px 20px;
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    .content {
+      padding: 20px 10px; 
+      h2 {
+        font-size: px-to-rem(16px);
+      }
+
+      .description {
+        font-size: px-to-rem(12px);
+      }
+    }
+    
+    .image-container {
+      height: 350px;
+    }
+  }
+}
