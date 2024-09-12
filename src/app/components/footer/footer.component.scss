@@ -1,9 +1,10 @@
 @import '../../../styles/variables';
+@import '../../../styles.scss';
 
 .footer {
-  background-color: $primary-color;
-  color: $text-color;
+  background-color: var(--primary-color);
+  color: $accent-color;
   text-align: center;
-  padding: 10px 40px;
+  padding: 1px 40px;
   box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.1);
 }

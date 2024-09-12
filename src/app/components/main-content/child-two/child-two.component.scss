@@ -16,17 +16,18 @@
 
     h2 {
       font-size: px-to-rem(24px);
-      color: $text-color;
+      color: $accent-color;
     }
 
     .description {
       font-size: px-to-rem($font-size);
       margin: $spacing-unit 0;
       padding: 20px 0;
+      color: var(--text-color);
     }
 
     .button {
-      @include button-style($text-color);
+      @include button-style();
       border-radius: 30px;
       padding: 14px 30px;
       font-family: "Poppins", system-ui;

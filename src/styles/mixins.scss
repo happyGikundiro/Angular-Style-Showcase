@@ -1,15 +1,20 @@
-@mixin flex-center {
+@mixin flex-center(){
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
   }
   
-  @mixin button-style($bg-color) {
-    background-color: $bg-color;
+@mixin button-style() {
+    background-color: $accent-color;
     color: white;
     border: none;
     padding: 10px;
     border-radius: 5px;
     cursor: pointer;
-  }
+}
+
   
+@mixin theme($theme) {
+  background-color: map-get($theme, background);
+  color: map-get($theme, text-color);
+}

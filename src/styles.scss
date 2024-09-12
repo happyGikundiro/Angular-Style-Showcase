@@ -2,23 +2,14 @@
 @import 'styles/variables';
 @import 'styles/mixins';
 @import 'styles/functions';
-@import 'styles/shared';
 @import 'styles/themes';
 
 html, body {
     height: 100%; 
     margin: 0;
     padding: 0;
+    font-family: "Poppins", system-ui;
   }
-
-body {
-  font-family: "Poppins", system-ui;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 100vh;
-}
-
 body.light-theme {
     @include theme($light-theme);
   }
@@ -26,20 +17,3 @@ body.light-theme {
   body.dark-theme {
     @include theme($dark-theme);
   }
-  
-
-.app-container {
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  min-height: 100vh;
-  
-  header {
-    background-color: $primary-color;
-    color: white;
-    padding: $spacing-unit;
-  }
-
-  main {
-    padding: $spacing-unit;
-  }
-}

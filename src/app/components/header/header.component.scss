@@ -1,31 +1,32 @@
 
   @import '../../../styles/mixins.scss';
   @import '../../../styles/variables';
+  @import '../../../styles.scss';
   
   .header {
-    background-color: $primary-color;
+    background-color: var(--primary-color);
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    padding: px-to-rem(16px);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 40px;
+    padding: px-to-rem(12) px-to-rem(30);
+    @include flex-center ();
+
+    @media (max-width: 768px) {
+      justify-content: end;
+     }
     
     .logo-container img{
         height: 45px;
     }
 
-    h1 {
-      font-size: px-to-rem(24px);
-      margin: 0;
-      color: $text-color;
+    .logo-container{
+    @media (max-width: 768px) {
+     display: none;
+    }
     }
   
     .theme-toggle {
       background: none;
       border: none;
-      color: $text-color;
-      font-size: px-to-rem(24px);
+      color: var(--text-color);
       cursor: pointer;
     }
     .header-right{
@@ -41,6 +42,7 @@
 
     .links a{
         text-decoration: none;
+        color: $accent-color;
     }
 
     .active{

@@ -1,19 +1,23 @@
-<header class="header">
-    <!-- <h1>HACHAFU</h1> -->
-    <div class='logo-container'>
-    <img src="/assets/Images/logo.png" alt="">
-    </div>
 
-    <div class='header-right'>
-    <div class='links'>
-    <a routerLink="home" routerLinkActive="active">Home</a>
-    <a routerLink="products" routerLinkActive="active">Products</a>
+   <header class="header">
+    <div class="logo-container">
+      <img src="/assets/Images/logo.png" alt="Logo">
     </div>
+  
+    <div class="header-right">
+      <div class="links">
+        <a routerLink="home" routerLinkActive="active">Home</a>
+        <a routerLink="products" routerLinkActive="active">Products</a>
+      </div>
+  
+      <button class="theme-toggle" (click)="toggleTheme()">
+        <svg 
+          width="32" height="20" viewBox="0 0 32 20" fill="none" xmlns="http://www.w3.org/2000/svg" [class.dark]="isDarkTheme" class="theme-icon">
+          <rect width="32" height="20" rx="10" fill="#74A7A9" />
+          <circle [attr.cx]="isDarkTheme ? 22 : 10" cy="10" r="7" fill="white" class="transition-transform duration-300" />
+        </svg>
+      </button>
 
-    <button class="theme-toggle" (click)="toggleTheme()">
-      <i class="material-icons">{{ themeIcon }}</i>
-    </button>
     </div>
-
   </header>
   

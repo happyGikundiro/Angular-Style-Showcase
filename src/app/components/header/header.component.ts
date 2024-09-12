@@ -1,24 +1,36 @@
-import { Component } from '@angular/core';
+
+import { Component, Renderer2, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrl: './header.component.scss'
+  styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent {
-  themeIcon = 'brightness_6';
+export class HeaderComponent implements OnInit {
+  isDarkTheme = false;
+
+  constructor(private renderer: Renderer2) {}
+
+  ngOnInit() {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      this.isDarkTheme = true;
+      this.renderer.addClass(document.body, 'dark-theme');
+    } else {
+      this.renderer.addClass(document.body, 'light-theme');
+    }
+  }
 
   toggleTheme() {
-    const body = document.body;
-    const currentTheme = body.classList.contains('dark-theme') ? 'dark-theme' : 'light-theme';
-
-    if (currentTheme === 'light-theme') {
-      body.classList.replace('light-theme', 'dark-theme');
-      this.themeIcon = 'brightness_7';
+    this.isDarkTheme = !this.isDarkTheme;
+    if (this.isDarkTheme) {
+      this.renderer.addClass(document.body, 'dark-theme');
+      this.renderer.removeClass(document.body, 'light-theme');
+      localStorage.setItem('theme', 'dark');
     } else {
-      body.classList.replace('dark-theme', 'light-theme');
-      this.themeIcon = 'brightness_6';
+      this.renderer.addClass(document.body, 'light-theme');
+      this.renderer.removeClass(document.body, 'dark-theme');
+      localStorage.setItem('theme', 'light');
     }
   }
 }
-

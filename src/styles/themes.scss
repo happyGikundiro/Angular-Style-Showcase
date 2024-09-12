@@ -1,14 +1,10 @@
-$light-theme: (
-  background: #ffffff,
-  text-color: #000000
+
+$light-theme:(
+   "background": #ffffff,
+   "text-color": black,
 );
 
 $dark-theme: (
-  background: #000000,
-  text-color: #ffffff
-);
-
-@mixin theme($theme) {
-  background-color: map-get($theme, background);
-  color: map-get($theme, text-color);
-}
+   "background": #313E51,
+   "text-color": white,
+)
