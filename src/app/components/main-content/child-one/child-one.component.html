@@ -1,6 +1,5 @@
- 
   <div class="products-container" *ngIf="products.length > 0; else loading">
-    <div *ngFor="let product of products" class="product-item">
+    <div *ngFor="let product of products" class="product-item" appHoverEffect>
       <div class="image-container">
         <img [src]="product.image" [alt]="product.title" class="product-image">
       </div>
@@ -12,8 +11,8 @@
       </div>
     </div>
   </div>
-  
+
   <ng-template #loading>
-    <p class="loading-message">Loading products...</p>
+    <p *ngIf="!errorMessage" class="loading-message">Loading products...</p>
+    <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
   </ng-template>
-  
