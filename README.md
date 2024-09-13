@@ -20,7 +20,7 @@ Key features include:
 - [SCSS Architecture](#scss-architecture)
 
 ## Demo
-[click here]()
+[click here](https://gamh-angular-styleshowcase.netlify.app)
 
 ## Installation
 
